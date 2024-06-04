@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Январь</h1>
+    <table id="myTable">
+        <tr>
+            <th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th>
+        </tr>
+    </table>
+    
+
+
+
+    <script>
+        let table = document.getElementById('myTable');
+        let daysInMonth = 31;
+        let days = 1;
+
+        for(let i = 1; i < 6; i++) {
+            table.innerHTML += "<tr></tr>";
+            let rows = document.getElementsByTagName("tr");
+            for(let j = 0; j < 7 & days <= daysInMonth; j++) {
+                rows.item(i).innerHTML += "<td>" + days++ + "</td>";
+            } 
+        }
+    </script>
+</body>
+</html>

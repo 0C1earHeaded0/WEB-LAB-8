@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function avg() {
+
+            let array = argsToArray(arguments);
+
+            if (array.some((el) => isNaN(el))) {
+                return 0;
+            }
+
+            let result = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                result += arguments[i];
+            }
+
+            return result / arguments.length;
+        }
+
+        function argsToArray(arguments) {
+            let args = [];
+            for (let i = 0; i < arguments.length; i++){
+                args[i] = arguments[i];
+            }
+
+            return args;
+        }
+
+        console.log(avg('1'));
+    </script>
+</body>
+</html>

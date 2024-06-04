@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let size = 1;
+
+        let bytesInKiloBytes = 1024,
+            kiloBytesInMegaBytes = 1024,
+            megaBytesInGigaBytes = 1024;
+
+        let unit = "Mb".toLowerCase();
+        let bytesInSize;
+
+        switch (unit) {
+            case "kb": {
+                bytesInSize = size * bytesInKiloBytes;
+                break;
+            }
+
+            case "mb": {
+                bytesInSize = size * bytesInKiloBytes * kiloBytesInMegaBytes;
+                break;
+            }
+
+            case "gb": {
+                bytesInSize = size * bytesInKiloBytes * kiloBytesInMegaBytes * megaBytesInGigaBytes;
+                break;
+            }
+
+            default : {
+                bytesInSize = null;
+            }
+        }
+
+        console.log(bytesInSize == null ? "Неудачно!" : bytesInSize);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function words(n = 0) {
+
+            let str = n.toString();
+            let importantPart = chooseImportantPart(str);
+            
+            switch (importantPart) {
+                case "1":{
+                    return `${n} товар`;
+                    break;
+                }
+                case "2":
+                case "3":
+                case "4":{
+                    return `${n} товара`;
+                    break;
+                }
+                default : {
+                    return `${n} товаров`;
+                    break;
+                }
+                     
+            }
+        }
+
+        function chooseImportantPart(str) {
+            if (str.length < 2) {
+                return str;
+            } else if (str.length >= 2){
+                if (str.match(/\d1\d$/)) {
+                    return str;
+                } else {
+                    return str[str.length-1];
+                }
+            }
+            
+
+        }
+
+        console.log(words(121));
+    </script>
+</body>
+</html>
